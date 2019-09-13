@@ -2,82 +2,106 @@
 
 <html lang="en-us">
 
-  <head>
+<head>
 
-    <meta charset="UTF-8">
-    <title>Multiplayer Rocks Paper Scissors</title>
+  <meta charset="UTF-8">
+  <title>Multiplayer Rocks Paper Scissors</title>
 
-    <!-- CSS reset sheet -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+  <!-- CSS reset sheet -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
 
-    <!-- Our Own CSS File -->
-    <link rel="stylesheet" href="style.css">
+  <!-- Our Own CSS File -->
+  <link rel="stylesheet" href="style.css">
 
-    <!-- Firebase References -->
-    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+  <!-- Firebase References -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <header>
-      <h1>Rock Paper Scissors</h1>
-    </header>
+  <header>
+    <!-- Display: Page Title -->
+    <h1>Rock Paper Scissors</h1>
+  </header>
 
-    <div id="sizer">
+  <div id="sizer">
 
-      <div id="swap-zone"><input id="username" placeholder="Name"/>
-        <button id="start">Start</button>
-      </div>
+    <div id="swap-zone">
+      <!-- Display: Input for Player's Name -->
+      <input id="username" placeholder="Name" />
+      <!-- Display: Button to Enter Player into the Game -->
+      <button id="start">Start</button>
+    </div>
 
-      <div id="current-turn"><h2></h2></div>
+    <!-- Display: Which player's turn it is -->
+    <div id="current-turn">
+      <h2></h2>
+    </div>
 
-      <div id="game-div">
+    <!-- Display Section: Main gameplay area -->
+    <div id="game-div">
 
-        <div id="player1">
-          <h3 id="player1-name">Player1</h3>
-          <ul>
-          </ul>
-          <div id="player1-chosen"></div>
-          <div class="outcomes">
-            <div class="outcome-trackers" id="player1-wins"></div>
-            <div class="outcome-trackers" id="player1-losses"></div>
-          </div>
+      <!-- Display Section: Player 1's Information -->
+      <div id="player1">
+        <!-- Display: Entered Name of Player 1 -->
+        <h3 id="player1-name">Player1</h3>
+        <ul>
+        </ul>
+        <!-- Display: Player 1's RPS Round Choice -->
+        <div id="player1-chosen"></div>
+        <div class="outcomes">
+          <!-- Display: Number of Player 1's Wins -->
+          <div class="outcome-trackers" id="player1-wins"></div>
+          <!-- Display: Number of Player 1's Losses -->
+          <div class="outcome-trackers" id="player1-losses"></div>
         </div>
-
-        <div id="result"><h2></h2></div>
-
-        <div id="player2">
-          <h3 id="player2-name">Player2</h3>
-          <ul>
-          </ul>
-          <div id="player2-chosen"></div>
-          <div class="outcomes">
-            <div class="outcome-trackers" id="player2-wins"></div>
-            <div class="outcome-trackers" id="player2-losses"></div>
-          </div>
-        </div>
-
       </div>
-
-      <div id="chat">
-        <div id="chat-messages"></div>
-        <div id="chat-bar">
-          <input id="chat-input" />
-          <button id="chat-send">Send</button>
+      
+      <!-- Display: The winner of the round -->
+      <div id="result">
+        <h2></h2>
+      </div>
+      
+      <!-- Display Section: Player 2's Information -->
+      <div id="player2">
+        <!-- Display: Entered Name of Player 2 -->
+        <h3 id="player2-name">Player2</h3>
+        <ul>
+        </ul>
+        <!-- Display: Player 2's RPS Round Choice -->
+        <div id="player2-chosen"></div>
+        <div class="outcomes">
+          <!-- Display: Number of Player 2's Wins -->
+          <div class="outcome-trackers" id="player2-wins"></div>
+          <!-- Display: Number of Player 2's Losses -->
+          <div class="outcome-trackers" id="player2-losses"></div>
         </div>
       </div>
 
     </div>
 
-    <!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Display Section: Online Chatroom of All Players Playing RPS -->
+    <div id="chat">
+      <!-- Display: Scrolling Chatroom text of everybody's messages -->
+      <div id="chat-messages"></div>
+      <div id="chat-bar">
+        <!-- Display: Input for Player's Message to be sent to the Chatroom -->
+        <input id="chat-input" />
+        <!-- Display: Button to send the Player's Message to the Chatroom -->
+        <button id="chat-send">Send</button>
+      </div>
+    </div>
 
-    <!-- Script -->
-    <script src="app.js"></script>
+  </div>
 
-  </body>
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Script -->
+  <script src="app.js"></script>
+
+</body>
 
 </html>
-
