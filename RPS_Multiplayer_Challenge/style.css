@@ -1,128 +1,144 @@
+/* select the 'body' HTML element */
 body {
   /* Visual */
   background-color: #e4f0d0;
 }
 
+/* select all 'header' HTML elements */
 header {
   /* Visual */
   background-color: #c2d8b9;
 }
 
+/* select all 'h1' HTML elements */
 h1 {
   /* Visual */
-  padding: 15px;
-
+  padding: 15px; /* add padding on all four sides of all h1 elements */
+  
   /* Typography */
   font-size: 36px;
   text-align: center;
 }
 
+/* select all 'h2' HTML elements */
 h2 {
   /* Typography */
   font-size: 24px;
 }
 
+/* select all 'input' HTML elements */
 input {
   /* Visual */
   background-color: #fffcf7;
 }
 
+/* select the first HTML element that has the 'sizer' ID attribute */
 #sizer {
   /* Box-model */
   width: 1024px;
-
+  
   /* Positioning */
-  margin: 0 auto;
+  margin: 0 auto; /* remove top and bottomm margin, also horizontally center the #sizer div on the whole page */
 }
 
 /***********************************
 
-              SwapZone
+SwapZone
 
 ***********************************/
 
+/* select the first HTML element that has the 'swap-zone' ID attribute */
 #swap-zone {
   /* Box-model */
-  width: 75%;
-
+  width: 75%; /* of the #sizer div width */
+  
   /* Positioning */
-  margin: 25px auto;
-
+  margin: 25px auto; /* add a top and bottom margin, also horizontally center the #swap-zone div within the #sizer div */
+  
   /* Typography */
   text-align: center;
 }
 
+/* select all 'input' HTML element descendants of the first HTML element that has the 'swap-zone' ID attribute */
 #swap-zone input {
   /* Box-model */
   width: 200px;
   height: 30px;
-
+  
   /* Typography */
   font-size: 30px;
 }
 
+/* select all 'button' HTML element descendants of the first HTML element that has the 'swap-zone' ID attribute */
 #swap-zone button {
   /* Box-model */
   width: 100px;
   height: 36px;
-
+  
   /* Typography */
   font-size: 22px;
-
+  
   /* Positioning */
-  vertical-align: top;
+  vertical-align: top; /* get this to vertically-align better with the #swap-zone input element */
 }
 
 /***********************************
 
-              Turn Indicator
+Turn Indicator
 
 ***********************************/
 
+/* select the first HTML element that has the 'current-turn' ID attribute */
 #current-turn {
   /* Box-model */
-  width: 75%;
-
+  width: 75%; /* of the #sizer div width */
+  
   /* Positioning */
-  margin: 15px auto;
-
+  margin: 15px auto; /* add a top and bottom margin, also horizontally center the #current-turn div within the #sizer div */
+  
   /* Typography */
   text-align: center;
 }
 
 /***********************************
 
-              GameDiv
+GameDiv
 
 ***********************************/
+/* select the first HTML element that has the 'game-div' ID attribute */
 #game-div {
   /* Typography */
-  text-align: center;
+  text-align: center; /* center the #player1, #result, and #player2 inline-block divs within this #game-div div */
 }
 
+/* select the first HTML element that has the 'player1' ID attribute */
+/* also select the first HTML element that has the 'result' ID attribute */
+/* also select the first HTML element that has the 'player2' ID attribute */
 #player1,
 #result,
 #player2 {
-  position: relative;
-  display: inline-block;
-
+  position: relative; /* set the positions of #player1, #result, and #player2 to 'relative' to create a new stacking context in each one */
+  display: inline-block; /* cause #player1, #result, and #player2 divs to sit next to each other inline like text */
+  
   /* Box-model */
-  width: 25%;
+  width: 25%; /* of the #game-div div width */
   height: 200px;
-  box-sizing: border-box;
-  padding: 10px;
-
+  box-sizing: border-box; /* make it so the padding and border is included in the height and widths instead of adding onto them */
+  padding: 10px; /* add padding on all four sides of #player1, #result, and #player2 divs */
+  
   /* Positioning */
-  margin: 2%;
+  margin: 2%; /* add margin on all four sides of #player1, #result, and #player2 divs equaling a percentage of the #game-div div's --> WIDTH <-- */
 
   /* Typography */
   text-align: center;
-  vertical-align: top;
-
+  vertical-align: top; /* set #player1, #result1, and #player2 to be vertically-aligned by top because the default baseline is causing them to be misaligned due to the #result containing an h2 which has a different font size from #player1 and #player2 divs */
+  
   /* Visual */
-  border: 1px solid #000;
+  border: 1px solid #000; /* add a thin-lined black border on all four sides of the #player1, #result, and #player2 divs */
 }
 
+/* select the first HTML element that has the 'player1-name' ID attribute */
+/* also select the first HTML element that has the 'player2-name' ID attribute */
 #player1-name,
 #player2-name {
   /* Positioning */
@@ -132,101 +148,115 @@ input {
   font-size: 28px;
 }
 
+/* select the first HTML element that has the 'player1-chosen' ID attribute */
+/* also select the first HTML element that has the 'player2-chosen' ID attribute */
 #player1-chosen,
 #player2-chosen {
   /* Positioning */
   margin-top: 25px;
-
+  
   /* Typography */
   font-size: 60px;
 }
 
+/* select all 'li' HTML elements */
 li {
   /* Positioning */
-  margin: 12px 0;
-
+  margin: 12px 0; /* add a margin to the top and bottom of each list item while removing margins from their left and right sides */
+  
   /* Typography */
   font-size: 24px;
 }
 
+/* select all HTML elements that have the 'outcomes' class attached */
 .outcomes {
   /* Positioning */
-  position: absolute;
-  bottom: 10px;
-
+  position: absolute; /* remove the .outcomes divs from the normal flow of the page and have them stick in place on the page (not viewport) */
+  bottom: 10px; /* position the .outcomes divs just above bottom of their parent stacking context's elements (#player1 and #player2 divs in this case) */
+  
   /* Box-model */
-  width: 90%;
-
+  width: 90%; /* of the parent #player1 or #player2 div's width */
+  
   /* Typography */
-  text-align: center;
+  text-align: center; /* center the contained wins and losses boxes */
 }
 
+/* select all HTML elements that have the 'outcome-trackers' class attached */
 .outcome-trackers { /* Box-model */
-  display: inline-block;
+  display: inline-block; /* cause the respective player1 or player2's wins and losses divs to sit next to each other inline like text */
 }
 
+/* select all 'h2' HTML element descendants of the first HTML element that has the 'result' ID attribute */
 #result h2 {
   /* Positioning */
   margin-top: 20px;
-
+  
   /* Typography */
   font-size: 60px;
 }
 
 /***********************************
 
-            Chatbox
+Chatbox
 
 ***********************************/
 
+/* select the first HTML element that has the 'chat' ID attribute */
 #chat {
   /* Positioning */
-  position: relative;
-
+  position: relative; /* set the position of #chat to 'relative' to create a new stacking context */
+  
   /* Box-model */
   width: 600px;
   height: 150px;
-
+  
   /* Visual */
-  padding: 10px;
-  margin: 20px auto;
+  padding: 10px; /* add padding on all four sides of the #chat element */
+  margin: 20px auto; /* add a top and bottom margin, also horizontally center the #chat div within the #sizer div */
 }
 
+/* select the first HTML element that has the 'chat-messages' ID attribute */
 #chat-messages {
   /* Box-model */
   height: 125px;
-  overflow: auto;
-
+  overflow: auto; /* if there are more messages that can fit within the #chat-messages height-restricted box, add the ability to scroll its contents; otherwise, hide any scrollbars that might exist visually */
+  
   /* Visual */
   background-color: #fffcf7;
 }
 
+/* select the first HTML element that has the 'chat-bar' ID attribute */
 #chat-bar {
   /* Positioning */
-  position: absolute;
-  bottom: 10px;
+  position: absolute; /* remove the #chat-bar element from the normal flow of the page and have it stick in place on the page (not viewport) */
+  bottom: 10px; /* position the #chat-bar element just above bottom of their parent stacking context's elements (the #chat element in this case) */
 }
 
+/* select the first HTML element that has the 'chat-input' ID attribute */
 #chat-input {
   /* Box-model */
   width: 550px;
 }
 
+/* select the first HTML element that has the 'chat-send' ID attribute */
 #chat-send {
   /* Box-model */
   width: 40px;
 }
 
+/* select all HTML elements that have the 'player1' class attached */
 .player1 {
   /* Visual */
   color: #419d78;
 }
 
+/* select all HTML elements that have the 'player2' class attached */
 .player2 {
   /* Visual */
   color: #2d3047;
 }
 
+/* select all HTML elements that have the 'player0' class attached */
 .player0 {
   color: #000;
 
