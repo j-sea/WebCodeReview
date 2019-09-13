@@ -1,4 +1,4 @@
-// Initialize Firebase
+// Set up the configuration settings for our firebase connection
 var config = {
   apiKey: "AIzaSyAgEuXgOYwmHK_RqpVzMIJDRLD5ZB7UbbQ",
   authDomain: "rps-multi-7fedd.firebaseapp.com",
@@ -6,13 +6,22 @@ var config = {
   storageBucket: "rps-multi-7fedd.appspot.com"
 };
 
+// Initialize Firebase
 firebase.initializeApp(config);
 
+// Grab a reference to our firebase database
 var database = firebase.database();
+// Create a firebase 'folder' to hold all of the chat data
 var chatData = database.ref("/chat");
+// Create a firebase 'folder' to hold all of the players data
 var playersRef = database.ref("players");
+// Create a firebase 'folder' to hold all of the current turn data
 var currentTurnRef = database.ref("turn");
+
+// Initialize and set a default name for our chatroom's user name
 var username = "Guest";
+
+// Initialize the current number of players to 'null'
 var currentPlayers = null;
 var currentTurn = null;
 var playerNum = false;
